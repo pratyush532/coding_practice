@@ -1,0 +1,13 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        d = [0]*26
+        for i in ransomNote:
+            d[ord(i)-97] -=1
+        for i in magazine:
+            d[ord(i)-97] +=1
+        
+        for i in d:
+            if i<0:
+                return False
+                
+        return True
